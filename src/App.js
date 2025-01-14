@@ -6,7 +6,7 @@ import Check from './components/checking_comps/check'
 function App() {
   return (
     <div className="App">
-      <Check />
+      <Login />
       {/* <Login /> */}
     </div>
   );

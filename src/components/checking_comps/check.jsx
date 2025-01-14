@@ -1,31 +1,33 @@
-import React from 'react'
+import React from "react";
 import { IoMdMenu } from "react-icons/io";
+import "../../styles/login_styles/check.css"; // Add a CSS file for styling
 
 function Check() {
     return (
-        <>
-            <h1>Check in and Check out</h1>
+        <div className="check-container">
+            {/* Header */}
+            <header className="check-header">
+                <h1>Check-In & Check-Out</h1>
+                <button className="menu-button" aria-label="Open menu">
+                    <IoMdMenu size={24} />
+                </button>
+            </header>
 
-            {/*Side Navigation*/}
-            <div>
-                <button>
-                    <IoMdMenu />
-                </button>
-            </div>
+            {/* Main Content */}
+            <main className="check-main">
+                <p>Welcome! Please choose an option below:</p>
+                <div className="button-group">
+                    <button className="checkin-button">Check-In</button>
+                    <button className="checkout-button">Check-Out</button>
+                </div>
+            </main>
 
-            {/*Main window*/}
-            <div>
-                {/*Checkin button*/}
-                <button>
-                    Checkin
-                </button>
-                {/*Checkout button*/}
-                <button>
-                    Checkout
-                </button>
-            </div>
-        </>
-    )
+            {/* Footer */}
+            <footer className="check-footer">
+                <p>&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+            </footer>
+        </div>
+    );
 }
 
 export default Check;
