@@ -1,86 +1,144 @@
+/* General Styles */
+.home-container {
+  font-family: 'Poppins', sans-serif;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Header Section */
 .head-section {
-    display: grid;
-    grid-auto-flow: column;
-    border-width: 5px;
-    border-radius: 2px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #007BFF;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 8px 8px 0 0;
 }
 
+.head-section p {
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.head-section p:hover {
+  color: #f8f8f8;
+}
+
+/* Main Section */
+.home-main {
+  padding: 20px;
+}
+
+/* Cards Layout */
 .cards {
-    display: grid;
-    grid-auto-flow: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
 }
 
+/* Styling for individual cards */
 .card {
+  width: 100%;
+  max-width: 300px;
+  height: 280px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  padding: 15px;
+  margin: 0 auto; /* Ensures centering when necessary */
+}
 
-    width: 400px; /* Card width */
-    height: 500px; /* Card height */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    overflow: hidden; /* Ensure child elements stay inside */
-    background-color: #fff; /* White background */
-    margin: 20px auto; /* Center the card with auto margin */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effect */
-  }
-  
-  .card:hover {
-    transform: scale(1.1); /* Zoom in by 10% */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-  }
-  
-  
-  .card-header {
-    padding: 16px;
-    border-bottom: 1px solid #ddd; /* Separator for header */
-    background-color: #f8f8f8; /* Light grey header background */
-  }
-  
-  .card-header h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #333; /* Darker text for header */
-  }
-  
-  .card-body {
-    padding: 16px;
-  }
-  
-  .card-body p {
-    justify-content: center;
-    align-items: center;
-    margin: 0 0 16px; /* Add spacing below the text */
-    color: #555; /* Neutral text color */
-    margin-top: 70px;
-    margin-bottom: 70px;
-  }
-  
-  .card-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #007BFF; /* Primary blue */
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .card-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Header */
+.card-header {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Card Body */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Percentage and Days */
+.percentage {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.days {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Card Button */
+.card-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+/* Status-Based Card Colors */
+.late-card {
+  background-color: #fbc02d;
+}
+
+.early-card {
+  background-color: #4caf50;
+}
+
+.absent-card {
+  background-color: #ff6b6b;
+}
+
+/* Make the last card span across the full row and center it */
+.cards .absent-card {
+  grid-column: span 2;
+  justify-self: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cards {
+      grid-template-columns: 1fr;
   }
 
-  .late-card  {
-    background-color: #fbc02d; /* Red for late */
+  .cards .absent-card {
+      grid-column: span 1;
   }
-  
-  .early-card  {
-    background-color: #4caf50; /* Green for early */
-  }
-  
-  .absent-card  {
-    background-color: #ff6b6b; /* Yellow for absent */
-  }
-  
-  
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { IoMdMenu } from "react-icons/io";
-import "../../styles/login_styles/check.css"; // Add a CSS file for styling
+import "../../styles/login_styles/check.css"; 
 
 function Check() {
     return (
@@ -9,7 +9,7 @@ function Check() {
             <header className="check-header">
                 <h1>Check-In & Check-Out</h1>
                 <button className="menu-button" aria-label="Open menu">
-                    <IoMdMenu size={24} />
+                    <IoMdMenu />
                 </button>
             </header>
 
