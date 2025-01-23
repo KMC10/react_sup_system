@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/login_styles/login.css";
 import Check from "../checking_comps/check"; // Import the Check component
+import Home from "../home"
 
 function Login() {
     const [isLoggedIn, setIsLoggedIn] = useState(false); // State to toggle between components
@@ -12,7 +13,7 @@ function Login() {
     return (
         <>
             {isLoggedIn ? ( // Conditional rendering
-                <Check />
+                <Home />
             ) : (
                 <div className="form-container">
                     <form className="form">
