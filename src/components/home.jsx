@@ -1,5 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/home.css";
+import { useNavigate } from "react-router-dom";
+
+function Logout() {
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem("token"); // If using authentication
+        navigate(0); // Force reload
+    };
+
+    return <button onClick={handleLogout}>Logout</button>;
+}
+
 
 function Home() {
     return (
@@ -7,8 +21,8 @@ function Home() {
             {/* Top Section */}
             <header className="head-section">
                 <p>Personal Information</p>
-                <p>Attendance Records</p>
-                <p>Logout</p>
+                <p><Link to="/attendance">Attendance Records</Link></p>
+                <Logout/>
             </header>
 
             {/* Main Content */}

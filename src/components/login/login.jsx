@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import "../../styles/login_styles/login.css";
-import Check from "../checking_comps/check"; // Import the Check component
-import Home from "../home"
+import Home from "../home"; // Import Home component
 
 function Login() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false); // State to toggle between components
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const handleLoginClick = () => {
-        setIsLoggedIn(true); // Set state to true when the login button is clicked
+        setIsLoggedIn(true);
     };
 
     return (
         <>
-            {isLoggedIn ? ( // Conditional rendering
-                <Home />
+            {isLoggedIn ? (
+                <Home /> // Show Home after login
             ) : (
                 <div className="form-container">
                     <form className="form">
@@ -30,6 +29,7 @@ function Login() {
                             <input
                                 className="input-group"
                                 placeholder="Please Enter your password"
+                                type="password"
                             />
                         </div>
                         {/* Password recovery */}
@@ -42,8 +42,8 @@ function Login() {
                         <div>
                             <button
                                 className="button"
-                                type="button" // Prevent form submission for now
-                                onClick={handleLoginClick} // Handle button click
+                                type="button"
+                                onClick={handleLoginClick} // Show Home on login
                             >
                                 Login
                             </button>
